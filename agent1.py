@@ -2,20 +2,8 @@ import os
 import streamlit as st
 
 from dotenv import load_dotenv
-from transformers import tool
-from transformers import CodeAgent, HfApiEngine
 
-@tool
-def model_download_tool(task: str) -> str:
-    """
-    This is a tool that returns the most downloaded model of a given task on the Hugging Face Hub.
-    It returns the name of the checkpoint.
-
-    Args:
-        task: The task for which
-    """
-    model = next(iter(list_models(filter="text-classification", sort="downloads", direction=-1)))
-    return model.id
+from smolagents import CodeAgent, DuckDuckGoSearchTool, HfApiModel
 
 
 def main():
@@ -28,15 +16,9 @@ def main():
   st.title('The Agent test')
 
 
-  
+  agent = CodeAgent(tools=[DuckDuckGoSearchTool()], model=HfApiModel())
 
-llm_engine = HfApiEngine(model="google/flan-t5-xl")
-agent = CodeAgent(tools=[], llm_engine=llm_engine, add_base_tools=True)
-
-#agent = CodeAgent(tools=[model_download_tool], llm_engine=llm_engine)
-agent.run(
-"Can you give me the name of the model that has the most downloads in the 'text-to-video' task on the Hugging Face Hub?"
-)
+  agent.run("How can I travel from Nigeria to Mexico transiting in Europe, and give me the cheapest round trip ticket in March?")
 
 if __name__ == '__main__':
     main()
