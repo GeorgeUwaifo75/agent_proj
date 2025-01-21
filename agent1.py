@@ -30,7 +30,7 @@ def main():
 
   
 
-llm_engine = HfApiEngine(model="https://huggingface.co/inference-endpoints")
+llm_engine = HfApiEngine(model="meta-llama/Meta-Llama-3-70B-Instruct")
 agent = CodeAgent(tools=[], llm_engine=llm_engine, add_base_tools=True)
 
 #agent = CodeAgent(tools=[model_download_tool], llm_engine=llm_engine)
