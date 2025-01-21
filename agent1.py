@@ -18,7 +18,7 @@ def main():
 
   agent = CodeAgent(tools=[DuckDuckGoSearchTool()], model=HfApiModel())
 
-  agent.run("How can I travel from Nigeria to Mexico transiting in Europe, and give me the cheapest round trip ticket in March?")
-
+  response = agent.run("How can I travel from Nigeria to Mexico transiting in Europe, and give me the cheapest round trip ticket in March?")
+  st.write(response)
 if __name__ == '__main__':
     main()
