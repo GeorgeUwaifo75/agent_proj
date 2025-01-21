@@ -30,13 +30,13 @@ def main():
 
   
 
-#llm_engine = HfApiEngine(model="https://huggingface.co/inference-endpoints")
-#agent = CodeAgent(tools=[], llm_engine=llm_engine, add_base_tools=True)
+llm_engine = HfApiEngine(model="https://huggingface.co/inference-endpoints")
+agent = CodeAgent(tools=[], llm_engine=llm_engine, add_base_tools=True)
 
 #agent = CodeAgent(tools=[model_download_tool], llm_engine=llm_engine)
-#agent.run(
-#"Can you give me the name of the model that has the most downloads in the 'text-to-video' task on the Hugging Face Hub?"
-#)
+agent.run(
+"Can you give me the name of the model that has the most downloads in the 'text-to-video' task on the Hugging Face Hub?"
+)
 
 if __name__ == '__main__':
     main()
