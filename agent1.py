@@ -8,8 +8,6 @@ from dotenv import load_dotenv
 def main():
   load_dotenv()
   api_key = os.getenv('HF_TOKEN')
-      database_url = os.getenv('DATABASE_URL')
-      
       if api_key:
           st.write(f"API Key loaded (but not shown): *******")
       else:
