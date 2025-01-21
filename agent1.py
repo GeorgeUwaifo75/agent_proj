@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 def main():
   load_dotenv()
-  api_key = os.getenv('API_KEY')
+  api_key = os.getenv('HF_TOKEN')
       database_url = os.getenv('DATABASE_URL')
       
       if api_key:
