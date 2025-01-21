@@ -30,7 +30,7 @@ def main():
 
   
 
-llm_engine = HfApiEngine(model="meta-llama/Meta-Llama-3-70B-Instruct")
+llm_engine = HfApiEngine(model="google/flan-t5-xl")
 agent = CodeAgent(tools=[], llm_engine=llm_engine, add_base_tools=True)
 
 #agent = CodeAgent(tools=[model_download_tool], llm_engine=llm_engine)
