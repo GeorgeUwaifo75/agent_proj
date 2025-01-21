@@ -1,4 +1,4 @@
-transformers[agents]
+transformers
 streamlit
 huggingface_hub
 python-dotenv
